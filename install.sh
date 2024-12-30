@@ -17,9 +17,13 @@ if [ $USERID -ne 0 ]; then
 if
 
 dnf install mysql-server -y
+
 FUNCTION $? "installed mysql server"
 
 systemctl enable mysqld
+
 FUNCTION $? "Enabled Mysqld"
 
 systemctl start mysqld
+
+FUNCTION $? "mysql service started"
