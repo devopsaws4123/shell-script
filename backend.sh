@@ -1,11 +1,16 @@
 #!/bin/bash
 
 USERID=$(id -u)
+
 DATE=$(date)
-RED="\e[31m"
-GREEN="\e[31m"
-NORMAL="\e[31m"
 LOG="backend-$DATE.log"
+RED="\e[31m"
+GREEN="\e[32m"
+NORMAL="\e[0m"
+
+if [ $USERID -ne 0 ]; then
+    echo -e "$RED you don't have access to run this file $NORMAL"
+fi
 
 
 BACKEND(){
