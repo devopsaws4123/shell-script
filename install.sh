@@ -1,5 +1,5 @@
 #!/bin/bash
 
-SUCCESS=dnf install nginx -y
+dnf install nginx -y
 
-echo "$SUCCESS"
+echo "installation success"
