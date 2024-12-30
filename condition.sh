@@ -9,5 +9,5 @@ if
 ls -l
 
 if [ $? -ne 0]; then
-    echo ("please find the results above")
+    echo "please find the results above"
 fi
