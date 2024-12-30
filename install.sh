@@ -23,4 +23,3 @@ systemctl enable mysqld
 FUNCTION $? "Enabled Mysqld"
 
 systemctl start mysqld
-FUNCTION $? "mysqld service started"
