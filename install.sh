@@ -1,5 +1,5 @@
 #!/bin/bash
 
-dnf install mysql-server -y
+SUCCESS=dnf install nginx -y
 
-echo "mysqld installed successfully"
+echo "$SUCCESS"
