@@ -4,7 +4,7 @@ USERID=$(id -u)
 DATE=$(date)
 R="\e[31m"
 N="\e[0m"
-LOG="mysql-server $DATE.log"
+LOG="mysql-server-$DATE.log"
 
 if [ $USERID -ne 0 ]; then
     echo -e " $R You Don't have access to run this script $N"
@@ -13,10 +13,10 @@ fi
 
 FUNCTION(){
 if [ $1 -ne 0 ]; then
-    echo -e "$2...failed"
+    echo -e "$2...failed" 2>&1 | tee >>LOG
     exit 1
 else
-    echo -e "$2..is Success"
+    echo -e "$2..is Success" 2>&1 | tee >>LOG
 fi
 }
 
