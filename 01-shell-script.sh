@@ -11,4 +11,4 @@ echo "enter you password:"
 
 read -s PASSWORD
 
-echo "You entered password"
+echo "You entered passwor"
