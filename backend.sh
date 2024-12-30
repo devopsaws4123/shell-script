@@ -10,6 +10,7 @@ NORMAL="\e[0m"
 
 if [ $USERID -ne 0 ]; then
     echo -e "$RED you don't have access to run this file $NORMAL"
+    exit 1
 fi
 
 
