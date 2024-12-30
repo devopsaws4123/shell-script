@@ -13,21 +13,21 @@ fi
 
 FUNCTION(){
 if [ $1 -ne 0 ]; then
-    echo "$2...failed"
+    echo -e "$2...failed"
     exit 1
 else
-    echo "$2..is Success"
+    echo -e "$2..is Success"
 fi
 }
 
-dnf install mysql-server -y
+dnf install mysql-server -y >>LOG
 
 FUNCTION $? "installed mysql server"
 
-systemctl enable mysqld
+systemctl enable mysqld >>LOG
 
-FUNCTION $? "Enabled Mysqld"
+FUNCTION $? "Enabled Mysqld" >>LOG
 
-systemctl start mysqld
+systemctl start mysqld >>LOG
 
 FUNCTION $? "mysql service started"
