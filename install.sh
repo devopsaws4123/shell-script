@@ -2,8 +2,8 @@
 
 USERID=$(id -u)
 DATE=$(date)
-R=.\e[32m
-N=.\e[0m
+R=".\e[31m"
+N=".\e[0m"
 LOG="mysql-server $DATE.log"
 
 if [ $USERID -ne 0 ]; then
