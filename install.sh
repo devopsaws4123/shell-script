@@ -1,9 +1,13 @@
 #!/bin/bash
 
 USERID=$(id -u)
+DATE=$(date)
+R=.\e[32m
+N=.\e[0m
+LOG="mysql-server $DATE.log"
 
 if [ $USERID -ne 0 ]; then
-    echo "You Don't have access to run this script"
+    echo " $R You Don't have access to run this script $N"
     exit 1
 fi
 
