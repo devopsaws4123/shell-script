@@ -1,9 +1,10 @@
 #!/bin/bash
 
 
-echo "hello world, please see below"
+PERSON1=prakash
+PERSON2=prasasd
 
-echo "ramesh: hi suresh"
-echo "suresh: hi ramesh"
-echo "ramesh: hellow, where are you"
-echo "suresh: in my native place only"
+echo "$PERSON1: hi $PERSON2"
+echo "$PERSON2: hi $PERSON1"
+echo "$PERSON1: hellow, where are you"
+echo "$PERSON2: in my native place only"
