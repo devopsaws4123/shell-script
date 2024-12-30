@@ -2,8 +2,6 @@
 
 USERID=$(id -u)
 
-
-
 FUNCTION(){
 if [ $1 -ne 0 ]; then
     echo "$2...failed"
