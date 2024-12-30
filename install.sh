@@ -14,7 +14,7 @@ fi
 if [ $USERID -ne 0 ]; then
     echo "You Don't have access to run this script"
     exit 1
-if
+fi
 
 dnf install mysql-server -y
 
