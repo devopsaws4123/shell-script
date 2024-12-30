@@ -3,15 +3,24 @@
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
-    echo "you don't have access to execute this script"
+    echo "You Don't have access to run this script"
     exit 1
-fi
+if
 
-dnf install nginx -y
-
-if [ $? -ne 0 ]; then
-    echo "you installation has failed"
+FUNCTION(){
+if [ $1 -ne 0 ]; then
+    echo "$2...failed"
     exit 1
 else
-    echo "you installation has failed"
-fi
+    echo "$2..is Success"
+if
+}
+
+dnf install mysql-server -y
+FUNCTION $? "installed mysql server"
+
+systemctl enable mysqld
+FUNCTION $? "Enabled Mysqld"
+
+systemctl start mysqld
+FUNCTION $? "mysqld service started"
