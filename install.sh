@@ -2,6 +2,11 @@
 
 USERID=$(id -u)
 
+if [ $USERID -ne 0 ]; then
+    echo "You Don't have access to run this script"
+    exit 1
+fi
+
 FUNCTION(){
 if [ $1 -ne 0 ]; then
     echo "$2...failed"
@@ -10,11 +15,6 @@ else
     echo "$2..is Success"
 fi
 }
-
-if [ $USERID -ne 0 ]; then
-    echo "You Don't have access to run this script"
-    exit 1
-fi
 
 dnf install mysql-server -y
 
