@@ -1,9 +1,17 @@
 #!/bin/bash
 
 USERID=$(id -u)
-dnf install httpd -y
+
 if [ $USERID -ne 0 ]; then
-    echo "you don't have access to execute this script, please contact sysadm"
-    else
-    echo "httpd has installed successfully"
+    echo "you don't have access to execute this script"
+    exit 1
+fi
+
+dnf install nginx -y
+
+if [ $? -ne 0 ]; then
+    echo "you installation has failed"
+    exit 1
+else
+    echo "you installation has failed"
 fi
