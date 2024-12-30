@@ -4,7 +4,7 @@ lss -l
 
 if [ $? -ne 0]; then
     echo "entered command has not found"
-if
+fi
 
 ls -l
 
