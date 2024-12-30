@@ -22,24 +22,24 @@ else
 fi
 }
 
-dnf module disable nodejs -y >>LOG
+dnf module disable nodejs -y >>LOG1
 BACKEND $? "Disabling node js"
 
-dnf module enable nodejs:20 -y >>LOG
-BACKEND $? "Disabling node js"
-dnf install nodejs -y >>LOG
+dnf module enable nodejs:20 -y >>LOG1
+BACKEND $? "Enable node js"
+dnf install nodejs -y >>LOG1
 BACKEND $? "Intsalling node js"
 useradd expense
 BACKEND $? "user added"
-mkdir /app >>LOG
+mkdir /app >>LOG1
 BACKEND $? "directory changed"
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip >>LOG
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  -y >>LOG1
 BACKEND $? "files downloaded"
-cd /app >>LOG
+cd /app >>LOG1
 BACKEND $? "directory changed"
-unzip /tmp/backend.zip >>LOG
+unzip /tmp/backend.zip -y >>LOG1
 BACKEND $? "unzipped files"
-cd /app >>LOG
+cd /app >>LOG1
 BACKEND $? "directory changed"
-npm install >>LOG
+npm install >>LOG1
 BACKEND $? "installed dependent packages"
