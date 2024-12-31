@@ -4,7 +4,8 @@ PWD=$(pwd)
 
 echo "You are here: $PWD"
 
-FILE=$(touch testing1.txt)
+touch testing2.txt
+FILE=$(ls testing2.txt)
 if [ $? -ne 0 ]
 then
     echo "files has not been created"
