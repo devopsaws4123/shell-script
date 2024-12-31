@@ -1,3 +1,5 @@
 #!/bin/bash
 
-PWD=$(PWD)
+PWD=$(pwd)
+
+echo "You are here: $PWD"
