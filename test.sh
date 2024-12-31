@@ -1,3 +1,3 @@
 #!/bin/bash
 
-PWD=$(pwd)
+PWD=$(PWD)
