@@ -12,3 +12,4 @@ then
 else
     echo "File has been created successfully: $FILE"
 fi
+echo "current file is $0"
