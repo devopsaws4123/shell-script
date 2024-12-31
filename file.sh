@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $USERID -eq 1001]
+if [ $USERID -eq 1001 ]
 then
 touch user.txt
 else
