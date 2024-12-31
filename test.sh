@@ -13,3 +13,5 @@ else
     echo "File has been created successfully: $FILE"
 fi
 echo "current file is $0"
+echo "cureent script filr PID is ..$$"
+echo "previous command PID $!"
