@@ -11,3 +11,7 @@ else
 fi
 
 vim user1.txt
+i
+echo "hi"
+esc
+:wq!
