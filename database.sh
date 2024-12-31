@@ -3,8 +3,8 @@
 USERID=$(id -u)
 
 DATE=$(date)
-RED="\e[32m"
-GREEN="\e[31m"
+RED="\e[31m"
+GREEN="\e[32m"
 NORMAL="\e[0m"
 
 if [ $USERID -ne 0 ]
