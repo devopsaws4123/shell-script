@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-DATE=$(date)
+DATE=$(date %+F)
 RED="\e[31m"
 GREEN="\e[32m"
 NORMAL="\e[0m"
