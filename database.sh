@@ -1,24 +1,22 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
 DATE=$(date)
-RED="\e[31m"
-GREEN="\e[32m"
-NORMAL="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-    echo "Timestamp: $DATE"
-    echo -e "$RED you don't have access to run this file $NORMAL"
+    echo " $DATE You Don't Have Access To Run This File"
     exit 1
 fi
 
-dnf list installed mysql
-if [ $? -ne 0 ]
+dnf install mysql-server -y
+if [ $? -eq 0 ]
 then
-    echo "mysql was not installed"
-    dnf install mysql -y
+    echo "mysql instaleed succssfully"
 else
-    echo "mysql was already installed"
+    exit 1
 fi
+
+systemctl enable mysqld
+systemctl start mysqld
+mysql_secure_installation --set-root-pass ExpenseApp@1
