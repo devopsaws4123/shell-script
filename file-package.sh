@@ -25,11 +25,11 @@ echo "$0 has executed at : $DATE" &>>OUTPUT_LOG
 
 for service in $@
 do
-    dnf list installed $service
-    if [ $? -ne 0 ]
-    then 
-    echo "$service $Y was already installed $N"
-    fi
+dnf list installed $service
+if [ $? -eq 0 ]
+then 
+    echo -e "$service $Y was already installed $N"
+fi
     dnf install $service -y &>>$OUTPUT_LOG
     echo -e " $service $G Installing $N "
     if [ $? -ne 0 ]
