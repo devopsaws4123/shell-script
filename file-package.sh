@@ -29,6 +29,7 @@ dnf list installed $service
 if [ $? -eq 0 ]
 then 
     echo -e "$service $Y was already installed $N"
+    exit 1
 fi
     dnf install $service -y &>>$OUTPUT_LOG
     echo -e " $service $G Installing $N "
