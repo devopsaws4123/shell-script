@@ -6,11 +6,10 @@ echo "please find the results below:"
 
 for i in {1..100}
 do
-    if [ $i -gt 50 ]
+    if [ 'expr $i % 3' == 0 ]
     then
-        break
+        echo $i
     fi
-    echo "Line Number : $i"
 done
 
 for package in 'cat textfile.txt'
