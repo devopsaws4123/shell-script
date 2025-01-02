@@ -9,5 +9,6 @@ do
     if [ $i -eq 5]
     then
         break
+    fi
     echo "$i"
 done
