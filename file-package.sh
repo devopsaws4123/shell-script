@@ -11,7 +11,7 @@ N="\e[0m"
 # codes are using for colurs -end
  
 LOG_PATH="/home/ec2-user/shell-script/shellscript-logs"    # This is for path of the log file 
-FILE=$(echo $0 | cut -d "." f1)                            # it will retrive the current executing file name
+FILE=$(echo $0 | cut -d "." -f1)                            # it will retrive the current executing file name
 DATE=$(date +%Y-%m-%d-%H-%M-%S)                            #it will print the date time
 OUTPUT_LOG="$LOGPATH/$FILE-$DATE.log"                      # Here we are concatinating and storing the log file 
 
@@ -29,6 +29,7 @@ then
     exit 1
 else
     echo "$2 installing"
+fi
 }
 
 for $service in $@
