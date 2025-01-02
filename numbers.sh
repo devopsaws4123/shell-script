@@ -12,3 +12,9 @@ do
     fi
     echo "Line Number : $i"
 done
+
+for package in 'cat textfile.txt'
+do 
+    echo "$package installing"
+
+done
