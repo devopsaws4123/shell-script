@@ -26,6 +26,6 @@ do
             echo "$package installation failed"
         fi
     else 
-        echo "$package was already $Y installed $N "
+        echo -e "$package was already $Y installed $N "
     fi
 done
