@@ -4,9 +4,9 @@ DATE=$(date)
 echo "Todat date is: $DATE"
 echo "please find the results below:"
 
-for i in {1..10}
+for i in {1..100}
 do
-    if [ $i -eq 5 ]
+    if [ $i -gt 50 ]
     then
         break
     fi
