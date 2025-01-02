@@ -32,4 +32,5 @@ do
         echo "$service installation has failed"
     else
         echo "$service installed scuccfully"
+    fi
 done
