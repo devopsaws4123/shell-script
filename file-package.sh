@@ -36,10 +36,4 @@ for $service in $@
 do
     dnf install $service -y &>>$OUTPUT_LOG
     $PACKAGE $? echo " $service $G Installed $N "
-
-    dnf install $service -y &>>$OUTPUT_LOG
-    $PACKAGE $? echo " $service $G installed $N "
-
-    dnf install $service -y &>>$OUTPUT_LOG
-    $PACKAGE $ echo " $service $G installed $N "
 done
