@@ -12,7 +12,14 @@ LOG_FILE=$(echo $0 | cut -d "." -f1 )
 LOG_FILE_NAME="$LOG_FOLDER_NAME/$LOG_FILE-$DATE.log"
 
 echo "script started at : $DATE"
-for i in {1..10}
+for package in $@
 do 
-    echo $i &>>$LOG_FILE_NAME
+    dnf list instaleed $package 
+    if [ $? -ne 0 ]
+    then
+        dnf install $package -y &>>LOG_FILE_NAME
+        echo "$package..installing"
+    else 
+        echo "$package was already installed "
+    fi
 done
