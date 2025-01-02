@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+# set -x
 USERID=$(id -u) # it will retrive the user id information
 
 # codes are using for colurs -begin
@@ -28,4 +28,5 @@ do
         echo "$package $R installation has failed $N "
     else
         echo "$package $G has been installed successfully $N"
+    fi
 done
