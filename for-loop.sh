@@ -19,9 +19,12 @@ do
     then
         dnf install $package -y &>>$LOG_FILE_NAME
         echo "$package..installing"
-        if [ $? -ne 0 ]
+        if [ $? -eq 0 ]
         then 
             echo "$package installed successfully"
+        else
+            echo "$package installation failed"
+        fi
     else 
         echo "$package was already installed "
     fi
