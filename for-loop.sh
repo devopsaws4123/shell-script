@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 
 LOG_FOLDER_NAME="/var/log/shellscript-log"
-DATE=$(date +%Y-%m-%d)
+DATE=$(date +%Y-%m-%d-%H-%M)
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 LOG_FILE_NAME="$LOG_FOLDER_NAME/$LOG_FILE-$DATE.log"
 
