@@ -6,7 +6,7 @@ echo "please find the results below:"
 
 for i in {1..10}
 do
-    if [ $i -eq 5]
+    if [ $i -eq 5 ]
     then
         break
     fi
