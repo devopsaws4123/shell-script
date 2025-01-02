@@ -13,7 +13,7 @@ N="\e[0m"
 LOG_PATH="/home/ec2-user/shell-script/shellscript-logs"    # This is for path of the log file 
 FILE=$(echo $0 | cut -d "." -f1)                            # it will retrive the current executing file name
 DATE=$(date +%Y-%m-%d-%H-%M-%S)                            #it will print the date time
-OUTPUT_LOG="$LOGPATH/$FILE-$DATE.log"                      # Here we are concatinating and storing the log file 
+OUTPUT_LOG="$LOG_PATH/$FILE-$DATE.log"                      # Here we are concatinating and storing the log file 
 
 if [ $USERID -ne 0 ]
 then
@@ -26,11 +26,11 @@ echo "$0 has executed at : $DATE"
 for service in $@
 do
     dnf install $service -y &>>$OUTPUT_LOG
-    echo " $service $G Installing $N "
+    echo -e " $service $G Installing $N "
     if [ $? -ne 0 ]
     then
-        echo "$service installation has failed"
+        echo -e "$service $R installation has failed $N"
     else
-        echo "$service installed scuccfully"
+        echo -e "$service $G installed scuccfully $N"
     fi
 done
