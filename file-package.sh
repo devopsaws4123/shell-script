@@ -32,7 +32,7 @@ else
 fi
 }
 
-for $service in $@
+for service in $@
 do
     dnf install $service -y &>>$OUTPUT_LOG
     $PACKAGE $? echo " $service $G Installed $N "
