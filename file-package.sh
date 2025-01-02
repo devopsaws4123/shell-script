@@ -26,5 +26,10 @@ echo "$0 has executed at : $DATE"
 for service in $@
 do
     dnf install $service -y &>>$OUTPUT_LOG
-    $PACKAGE $? echo " $service $G Installed $N "
+    echo " $service $G Installing $N "
+    if [ $? -ne 0 ]
+    then
+        echo "$service installation has failed"
+    else
+        echo "$service installed scuccfully"
 done
