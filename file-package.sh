@@ -20,7 +20,7 @@ then
     echo -e " $R You Don't Have Access to Execute This File, Plese Check With Admin Team $N"
 fi
 
-echo "$0 has executed at : $date"
+echo "$0 has executed at : $DATE"
 
 PACKAGE(){
 if [ $1 -ne 0 ]
