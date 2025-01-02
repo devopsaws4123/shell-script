@@ -20,11 +20,16 @@ then
     echo -e " $R You Don't Have Access to Execute This File, Plese Check With Admin Team $N"
 fi
 
-echo "$0 has executed at : $DATE"
+echo "$0 has executed at : $DATE" &>>OUTPUT_LOG
 
 
 for service in $@
 do
+    dnf list installed $service
+    if [ $? -ne 0 ]
+    then 
+    echo "$service $Y was already installed $N"
+    fi
     dnf install $service -y &>>$OUTPUT_LOG
     echo -e " $service $G Installing $N "
     if [ $? -ne 0 ]
