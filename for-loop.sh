@@ -17,7 +17,7 @@ do
     dnf list installed $package 
     if [ $? -ne 0 ]
     then
-        dnf install $package -y &>>LOG_FILE_NAME
+        dnf install $package -y &>>$LOG_FILE_NAME
         echo "$package..installing"
     else 
         echo "$package was already installed "
